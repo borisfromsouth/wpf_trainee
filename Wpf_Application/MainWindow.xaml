@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Application"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="My First GUI" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hello World! Lets be friends)" VerticalAlignment="Top" Margin="423,276,0,0"/>
+        <Button Content="Click Me" Height="30" Width="100" FontSize="20" FontStyle="Italic"></Button>
+        <Button Height="30" Width="160" FontSize="20" FontStyle="Italic" Margin="143,202,497,202" Click="Button_Click"> Anouther content </Button>
+        <Button Content="Right side" Height="30" Width="110" FontSize="20" FontStyle="Oblique" Margin="498,202,142,202"/>
+        <Button>
+            <Button.Opacity>72</Button.Opacity>
+            <Button.Content>
+                <WrapPanel>
+                    <TextBlock Foreground="Aqua">Wrap</TextBlock>
+                    <TextBlock Foreground="Chocolate">Wrap</TextBlock>
+                    <TextBlock Foreground="DarkGreen">Wrap</TextBlock>
+                </WrapPanel>
+            </Button.Content>
+        </Button>
+        <!-- comment -->
     </Grid>
 </Window>
