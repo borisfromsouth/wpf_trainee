@@ -61,5 +61,11 @@ namespace Wpf_Application
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            // По клику на копку в дизайнере создастся метод обработки события
+            MessageBox.Show("tHANKS FOR Click ME!");
+        }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Wpf_Application"
         mc:Ignorable="d"
         Title="My First GUI" Height="450" Width="800">
-    <Grid>
+    <!--<Grid>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hello World! Lets be friends)" VerticalAlignment="Top" Margin="76,151,0,0"/>
         <Button Content="Click Me" Height="30" Width="100" FontSize="20" FontStyle="Italic"></Button>
         <Button Height="30" Width="160" FontSize="20" FontStyle="Italic" Margin="76,318,564,86" Click="Button_Click">Anouther content</Button>
@@ -23,5 +23,14 @@
                 </WrapPanel>
             </Button.Content>
         </Button>
-    </Grid><!-- comment -->
+    </Grid>--><!-- comment -->
+    <StackPanel>  <!--  -->
+        <TextBlock HorizontalAlignment="Center" Margin="20">This is in StackPanel</TextBlock>
+        <ListBox Height="100" Width="200" Margin="50"> <!-- из-за маргина отталкнется от TextBlock на 50 пикселей -->
+            <ListBoxItem Content="Item_1"></ListBoxItem>
+            <ListBoxItem Content="Item_2"></ListBoxItem>
+            <ListBoxItem Content="Item_3"></ListBoxItem>
+        </ListBox>
+        <Button Content="Click Me" Click="Button_Click_1" Margin="10"></Button>
+    </StackPanel>
 </Window>
