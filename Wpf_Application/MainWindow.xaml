@@ -7,12 +7,14 @@
         mc:Ignorable="d"
         Title="My First GUI" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hello World! Lets be friends)" VerticalAlignment="Top" Margin="423,276,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hello World! Lets be friends)" VerticalAlignment="Top" Margin="76,151,0,0"/>
         <Button Content="Click Me" Height="30" Width="100" FontSize="20" FontStyle="Italic"></Button>
-        <Button Height="30" Width="160" FontSize="20" FontStyle="Italic" Margin="143,202,497,202" Click="Button_Click"> Anouther content </Button>
-        <Button Content="Right side" Height="30" Width="110" FontSize="20" FontStyle="Oblique" Margin="498,202,142,202"/>
-        <Button>
-            <Button.Opacity>72</Button.Opacity>
+        <Button Height="30" Width="160" FontSize="20" FontStyle="Italic" Margin="76,318,564,86" Click="Button_Click">Anouther content</Button>
+        <Button Content="Right side" Height="30" Width="110" FontSize="20" FontStyle="Oblique" Margin="583,269,107,135"/>
+        <Button Margin="298,45,302,289">
+            <Button.Width>200</Button.Width>
+            <Button.Height>100</Button.Height>
+            <Button.FontSize>26</Button.FontSize>
             <Button.Content>
                 <WrapPanel>
                     <TextBlock Foreground="Aqua">Wrap</TextBlock>
@@ -21,6 +23,5 @@
                 </WrapPanel>
             </Button.Content>
         </Button>
-        <!-- comment -->
-    </Grid>
+    </Grid><!-- comment -->
 </Window>
