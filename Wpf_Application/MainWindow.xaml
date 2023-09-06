@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Application"
         mc:Ignorable="d"
-        Title="My First GUI" Height="450" Width="800">
+        Title="My First GUI" Height="400" Width="500">
+    <!-- Контейнер таблицы -->
     <!--<Grid>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hello World! Lets be friends)" VerticalAlignment="Top" Margin="76,151,0,0"/>
-        <Button Content="Click Me" Height="30" Width="100" FontSize="20" FontStyle="Italic"></Button>
-        <Button Height="30" Width="160" FontSize="20" FontStyle="Italic" Margin="76,318,564,86" Click="Button_Click">Anouther content</Button>
-        <Button Content="Right side" Height="30" Width="110" FontSize="20" FontStyle="Oblique" Margin="583,269,107,135"/>
-        <Button Margin="298,45,302,289">
+        <Button Content="Click Me" Height="30" Width="100" FontSize="20" FontStyle="Italic" Click="Button_Click_1"></Button>
+        <Button Height="30" Width="160" FontSize="20" FontStyle="Italic" Margin="320,275,320,129" MouseUp="Button_MouseUp">Anouther content</Button>
+        <Button Content="Right side" Height="30" Width="110" FontSize="20" FontStyle="Oblique" Margin="345,351,345,53"/>
+        <Button Margin="298,45,302,289" PreviewMouseUp="Button_PreviewMouseUp" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseRightButtonUp="Button_PreviewMouseRightButtonUp">
             <Button.Width>200</Button.Width>
             <Button.Height>100</Button.Height>
             <Button.FontSize>26</Button.FontSize>
@@ -23,14 +24,120 @@
                 </WrapPanel>
             </Button.Content>
         </Button>
-    </Grid>--><!-- comment -->
-    <StackPanel>  <!--  -->
+    </Grid>-->
+    
+    <!--===========================================================================================================================================================================================-->
+    
+    <!-- простой элемент компоновки -->
+    <!--<StackPanel>
         <TextBlock HorizontalAlignment="Center" Margin="20">This is in StackPanel</TextBlock>
-        <ListBox Height="100" Width="200" Margin="50"> <!-- из-за маргина отталкнется от TextBlock на 50 пикселей -->
+        <ListBox Height="100" Width="200" Margin="50">
             <ListBoxItem Content="Item_1"></ListBoxItem>
             <ListBoxItem Content="Item_2"></ListBoxItem>
             <ListBoxItem Content="Item_3"></ListBoxItem>
         </ListBox>
         <Button Content="Click Me" Click="Button_Click_1" Margin="10"></Button>
-    </StackPanel>
+    </StackPanel>-->
+
+    <!--===========================================================================================================================================================================================-->
+    
+    <!-- Разбиение таблицы -->
+    <!-- Свойство Auto задает размер под внутренее содержимое; размеры на макете тоже изменились -->
+    <!-- Свойство * задает размер под "вес" коэфициента (* будет равняться коэффициенту 1); в значении размера на макете отображается коэффициент -->
+    <!-- Поместить кнопку в колонку (не имеет четкого размера, значит заполняет всю колонку) -->
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/> 
+            <ColumnDefinition Width="*"/> 
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0" Grid.Row="0">Button 1</Button> 
+        <Button Grid.Column="1" Grid.Row="0">Button 2</Button>
+        <Button Grid.Column="2" Grid.Row="0">Button 3</Button>
+        <Button Grid.Column="0" Grid.Row="1">Button 4</Button>
+        <Button Grid.Column="1" Grid.Row="1">Button 5</Button>
+        <Button Grid.Column="2" Grid.Row="1">Button 6</Button>
+        <Button Grid.Column="0" Grid.Row="2">Button 7</Button>
+        <Button Grid.Column="1" Grid.Row="2">Button 8</Button>
+        <TextBlock Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"> TEXT </TextBlock>
+    </Grid>-->
+    
+    <!--===========================================================================================================================================================================================-->
+    
+    <!--  
+    Binding - привязка содержимого элемента к другому элементу
+    Синтаксис биндинга: {Binding ElementName=*имя_элемента*, Path=*значение*, Mode=*режим*, UpdateSourceTrigger=*Триггер для обновления значения*}
+    Режимы: One way - объекта-приемник изменяется после модификации свойства объекта-источника
+            Two way - применки и источник могут изменять привязанные свойства друг друга
+            One way to Source - объект-приемник, в котором объявлена привязка, меняет объект-источник 
+            One Time - свойство объекта-приемника устанавливается по свойству объекта-источника только один раз. В дальнейшем изменения в источнике никак не влияют на объект-приемник
+            Default - по умолчанию (если меняется свойство TextBox.Text, то имеет значение TwoWay, в остальных случаях OneWay)
+    -->
+    <!--<StackPanel>
+        <TextBox  Name="MyTextBox" Width="100" Margin="50" Text="{Binding ElementName=MySlider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Slider Name="MySlider" IsSnapToTickEnabled="True" Minimum="0" Maximum="100"></Slider>
+    </StackPanel>-->
+    
+    <!--===========================================================================================================================================================================================-->
+    
+    <!-- 
+        После того как в коде мы передаем DataContext, мы можем получть доступ ко всем вложенным в него полям
+        после передачи объекта 
+            MyPhone = new Phone 
+            { 
+                Name = "Lumia 630", 
+                Company = new Company { Title = "Microsoft" }, 
+                Price = 1000 
+            };
+            this.DataContext = MyPhone;
+        
+        можем обратиться к его и вложенным в него полям 
+        <TextBlock Text="{Binding Path=Name}" />   конкретное поле объекта
+        <TextBlock DataContext="{Binding Path=Company}" Text="{Binding Path=Title}" />  поле объекта вложенного в передаваемый в DataContext объект
+    -->
+    <!--<StackPanel>
+        <Label Content="Num1"/>
+        <TextBox Width="100" Height="30" Text="{Binding Path=Num1, Mode=TwoWay}"/>
+        <Label Content="Num2"/>
+        <TextBox Width="100" Height="30" Text="{Binding Path=Num2, Mode=TwoWay}"/>
+        <Label Content="Sum"/>
+        <TextBox Width="100" Height="30" Text="{Binding Path=Result, Mode=TwoWay}"/>
+    </StackPanel>-->
+    
+    <!--================================================================================================================================================================================================-->
+    
+    <!--
+    
+    -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="lbMatches" HorizontalAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="{Binding Team1}"></TextBlock>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Team2}"></TextBlock>
+                        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="{Binding Score1}"></TextBlock>
+                        <TextBlock Grid.Column="3" HorizontalAlignment="Center" Text="{Binding Score2}"></TextBlock> <!-- не выводится значение -->
+                        <ProgressBar Grid.Column="4" Minimum="0" Maximum="90" Value="{Binding Completion}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
 </Window>

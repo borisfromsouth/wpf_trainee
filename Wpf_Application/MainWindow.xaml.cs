@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Wpf_Application
 {
@@ -20,6 +10,8 @@ namespace Wpf_Application
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Sum SumObj { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -54,18 +46,51 @@ namespace Wpf_Application
 
             #endregion
 
+            #region BindingText
 
+            //SumObj = new Sum { Num1 = "1", Num2 = "3" };
+            //this.DataContext = SumObj;
+
+            #endregion
+
+            List<Match> matches = new List<Match>
+            {
+                new Match { Team1 = "Bayern Munich", Team2 = "Real Madrid", Score1 = 3, Score2 = 2, Completion = 85 }
+            };
+
+            lbMatches.ItemsSource = matches;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        #region RoutedEvents
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             // По клику на копку в дизайнере создастся метод обработки события
-            MessageBox.Show("tHANKS FOR Click ME!");
+            MessageBox.Show("tHANKS FOR Click ME! - Direct Event");
         }
+
+        private void Button_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("MouseUp - Bubbling Event");
+        }
+
+        private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("PreviewMouseUp - Tunnel Event");
+        }
+
+        #endregion
+
+
+    }
+
+    class Match
+    {
+        public int Score1 { get; set; }
+        public int Score2 { get; set; }
+        public string Team1 { get; set; }
+        public string Team2 { get; set; }
+        public int Completion { get; set; }
+
     }
 }
