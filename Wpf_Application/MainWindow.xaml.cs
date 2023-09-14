@@ -122,22 +122,66 @@ namespace Wpf_Application
 
     //=================================================================================================================================================================================================
 
+    //public partial class MainWindow : Window
+    //{
+    //    delegate void CheckStatenment();
+    //    event CheckStatenment IsAll;
+
+    //    public MainWindow()
+    //    {
+    //        InitializeComponent();
+
+    //        IsAll += CheckIsAll;
+    //    }
+
+    //    private void checkBoxAll_CheckedChanged(object sender, RoutedEventArgs e)
+    //    {
+    //        bool vlaue = (bool)cbAllTopings.IsChecked;
+    //        cbSalami.IsChecked = vlaue;
+    //        cbMushrooms.IsChecked = vlaue;
+    //        cbMozzarella.IsChecked = vlaue;
+    //    }
+
+    //    private void checkBoxSingle_CheckedChanged(object sender, RoutedEventArgs e)
+    //    {
+    //        cbAllTopings.IsChecked = null;
+    //        IsAll.Invoke();
+    //    }
+
+    //    private void CheckIsAll ()
+    //    {
+    //        if((bool)cbSalami.IsChecked && (bool)cbMushrooms.IsChecked && (bool)cbMozzarella.IsChecked)
+    //        {
+    //            cbAllTopings.IsChecked = true;
+    //        }
+    //        else if((bool)cbSalami.IsChecked || (bool)cbMushrooms.IsChecked || (bool)cbMozzarella.IsChecked)
+    //        {
+    //            cbAllTopings.IsChecked = null;
+    //        }
+    //        else
+    //        {
+    //            cbAllTopings.IsChecked = false;
+    //        }
+    //    }
+    //}
+
+    //=================================================================================================================================================================================================
+
     public partial class MainWindow : Window
     {
+        delegate void CheckStatenment();
+        event CheckStatenment IsAll;
+
         public MainWindow()
         {
             InitializeComponent();
 
-        }
-
-        private void checkBoxAll_CheckedChanged(object sender, RoutedEventArgs e)
-        {
 
         }
 
-        private void checkBoxSingle_CheckedChanged(object sender, RoutedEventArgs e)
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Please say Yes");
         }
     }
 }

@@ -167,20 +167,54 @@
     <!--================================================================================================================================================================================================-->
 
     <!-- 
-    IsThreeState - использование третьего состояния комбобокса (черный квадратик) как значение неполности???
+    IsThreeState - использование третьего состояния комбобокса (черный квадратик) как значение неопределенности
+    ToolTip может назначаться абсолютно любому элементу
     -->
+    <!--
     <StackPanel>
         <Label FontWeight="Bold"> Pizza Topings</Label>
         <CheckBox Name="cbAllTopings" IsThreeState="True" Checked="checkBoxAll_CheckedChanged" Unchecked="checkBoxAll_CheckedChanged">Add all</CheckBox>
-        <StackPanel>
-            <CheckBox Name="cbSalami" Checked="checkBoxSingle_CheckedChanged"  Unchecked="checkBoxSingle_CheckedChanged">
+        <StackPanel Margin="10">
+            <CheckBox Name="cbSalami" ToolTip="Salami Spicy" Checked="checkBoxSingle_CheckedChanged"  Unchecked="checkBoxSingle_CheckedChanged">
                 <TextBlock>
                     Salami <Run Foreground="Red" FontWeight="Bold">Spicy</Run>
                 </TextBlock>
             </CheckBox>
-            <CheckBox Name="cbMushrooms" Checked="checkBoxSingle_CheckedChanged"  Unchecked="checkBoxSingle_CheckedChanged">Mushrooms</CheckBox>
-            <CheckBox Name="cbMozzarella" Checked="checkBoxSingle_CheckedChanged"  Unchecked="checkBoxSingle_CheckedChanged">Mushrooms</CheckBox>
+            <CheckBox Name="cbMushrooms" ToolTip="Mushrooms" Checked="checkBoxSingle_CheckedChanged"  Unchecked="checkBoxSingle_CheckedChanged">Mushrooms</CheckBox>
+            <CheckBox Name="cbMozzarella" ToolTip="Mozzarella" Checked="checkBoxSingle_CheckedChanged"  Unchecked="checkBoxSingle_CheckedChanged">Mozzarella</CheckBox>
         </StackPanel>
-    </StackPanel>
+        <Button Height="40" Width="80" HorizontalAlignment="Left" Margin="30 0 0 0" FontSize="10">
+            <TextBlock>
+                Salami <Run ToolTip="Tab Me)" Foreground="Red" FontWeight="Heavy">Spicy</Run>
+            </TextBlock>
+        </Button>
+    </StackPanel>-->
     
+
+    <!--================================================================================================================================================================================================-->
+
+    <!--
+    
+    -->
+    <StackPanel Margin="5">
+        <Label FontWeight="Bold" FontSize="20">Do you like me?</Label>
+        <RadioButton Margin="5">
+            <WrapPanel>
+                <Rectangle Fill="Green" Width="15" Height="15"></Rectangle>
+                <TextBlock Text="Yes" Foreground="Green" Margin="5 0 0 0"></TextBlock>
+            </WrapPanel>
+        </RadioButton>
+        <RadioButton Margin="5" Checked="RadioButton_Checked">
+            <WrapPanel>
+                <Rectangle Fill="Red" Width="15" Height="15"></Rectangle>
+                <TextBlock Text="No" Foreground="Red" Margin="5 0 0 0"></TextBlock>
+            </WrapPanel>
+        </RadioButton>
+        <RadioButton Margin="5" IsChecked="True" Checked="RadioButton_Checked">
+            <WrapPanel>
+                <Image Source="D:/Фото/8O0uTmtL3gc.jpg" Width="100" Height="100"></Image>
+                <TextBlock Text="Maybe" Foreground="Blue"></TextBlock>
+            </WrapPanel>
+        </RadioButton>
+    </StackPanel>
 </Window>
