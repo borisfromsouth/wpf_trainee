@@ -108,6 +108,19 @@ namespace Wpf_Application
     //}
 
     //=================================================================================================================================================================================================
+    // Комбобокс с цветами Color
+
+    //public partial class MainWindow : Window
+    //{
+    //    public MainWindow()
+    //    {
+    //        InitializeComponent();
+
+    //        comboBoxColors.ItemsSource = typeof(Colors).GetProperties();
+    //    }
+    //}
+
+    //=================================================================================================================================================================================================
 
     public partial class MainWindow : Window
     {
@@ -115,7 +128,16 @@ namespace Wpf_Application
         {
             InitializeComponent();
 
-            comboBoxColors.ItemsSource = typeof(Colors).GetProperties();
+        }
+
+        private void checkBoxAll_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void checkBoxSingle_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
