@@ -167,21 +167,32 @@ namespace Wpf_Application
 
     //=================================================================================================================================================================================================
 
+    //public partial class MainWindow : Window
+    //{
+    //    delegate void CheckStatenment();
+    //    event CheckStatenment IsAll;
+
+    //    public MainWindow()
+    //    {
+    //        InitializeComponent();
+
+
+    //    }
+
+    //    private void RadioButton_Checked(object sender, RoutedEventArgs e)
+    //    {
+    //        MessageBox.Show("Please say Yes");
+    //    }
+    //}
+
+    //=================================================================================================================================================================================================
+
     public partial class MainWindow : Window
     {
-        delegate void CheckStatenment();
-        event CheckStatenment IsAll;
-
         public MainWindow()
         {
             InitializeComponent();
 
-
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Please say Yes");
         }
     }
 }
