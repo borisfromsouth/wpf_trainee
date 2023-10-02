@@ -223,8 +223,12 @@
     <!--================================================================================================================================================================================================-->
 
     <!--
-    
+    Setter - конструкция, которая задает указанному свойству определенное значение
+    Trigger - триггер с типом срабатывания и занчением, которое это срабатывание задает
+    EventTrigger - по сути обработчик событий, можно прописывать разные послендовательности действий
+    DataTrigger - триггер отслеживания изменения свойств
     -->
+    <!--
     <StackPanel>
         <Grid>
             <TextBlock Text="Hello world" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -287,5 +291,20 @@
             </TextBlock>
         </StackPanel>
     </StackPanel>
-    
+    -->
+
+    <!--================================================================================================================================================================================================-->
+
+    <!--
+    PasswordBox - специальный textbox для ввода пароля
+    -->
+    <!--
+    <StackPanel Margin="10">
+        <Label>Username:</Label>
+        <TextBox Name="textboxUserName"></TextBox>
+        <Label>Password:</Label>
+        <PasswordBox Name="textboxPassword" MaxLength="10" PasswordChar="*"></PasswordBox>
+        <Button Margin="5" Content="Login" Click="Button_Click"></Button>
+    </StackPanel>
+     -->
 </Window>
