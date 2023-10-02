@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
+﻿using System.Windows;
 
 namespace Wpf_Application
 {
@@ -187,17 +183,29 @@ namespace Wpf_Application
 
     //=================================================================================================================================================================================================
 
+    //public partial class MainWindow : Window
+    //{
+    //    public MainWindow()
+    //    {
+    //        InitializeComponent();
+
+    //    }
+
+    //    private void Button_Click(object sender, RoutedEventArgs e)
+    //    {
+    //        MessageBox.Show("Welcome" + textboxUserName.Text);
+    //    }
+    //}
+
+    //=================================================================================================================================================================================================
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
 
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Welcome" + textboxUserName.Text);
+            this.Content = new LoginView();
         }
     }
 }
