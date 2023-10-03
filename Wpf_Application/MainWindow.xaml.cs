@@ -81,6 +81,7 @@ namespace Wpf_Application
 
     //    #endregion
 
+    //    //  ListBox.SelectedItem - выделенная (выбранная) запись в listbox-е
     //    private void Button_Click(object sender, RoutedEventArgs e)
     //    {
     //        if(lbMatches.SelectedItem != null)
@@ -188,12 +189,23 @@ namespace Wpf_Application
     //    public MainWindow()
     //    {
     //        InitializeComponent();
-
     //    }
 
     //    private void Button_Click(object sender, RoutedEventArgs e)
     //    {
     //        MessageBox.Show("Welcome" + textboxUserName.Text);
+    //    }
+
+    //    private void textboxPassword_PasswordChanged(object sender, RoutedEventArgs e)
+    //    {
+    //        if (textboxPassword.Password.ToString().Length >= 6)
+    //        {
+    //            loginButton.IsEnabled = true;
+    //        }
+    //        else
+    //        {
+    //            loginButton.IsEnabled = false;
+    //        }
     //    }
     //}
 

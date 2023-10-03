@@ -298,15 +298,15 @@
     <!--
     PasswordBox - специальный textbox для ввода пароля
     -->
-    <!--
-    <StackPanel Margin="10">
+    
+    <!--<StackPanel Margin="10">
         <Label>Username:</Label>
         <TextBox Name="textboxUserName"></TextBox>
         <Label>Password:</Label>
-        <PasswordBox Name="textboxPassword" MaxLength="10" PasswordChar="*"></PasswordBox>
-        <Button Margin="5" Content="Login" Click="Button_Click"></Button>
-    </StackPanel>
-     -->
+        <PasswordBox Name="textboxPassword" PasswordChanged="textboxPassword_PasswordChanged" MaxLength="10" PasswordChar="*"></PasswordBox>
+        <Button Name="loginButton" Margin="5" Content="Login" Click="Button_Click" IsEnabled="False"></Button>
+    </St-->ackPanel>
+     
 
     <!--================================================================================================================================================================================================-->
 

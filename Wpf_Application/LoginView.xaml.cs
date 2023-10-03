@@ -11,7 +11,6 @@ namespace Wpf_Application
         public LoginView()
         {
             InitializeComponent();
-            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
